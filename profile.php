@@ -38,17 +38,36 @@ require_once './functions.php';
 
     ?>
     <!-- Title page -->
-    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-color: black;">
-        <h2 class="mtext-105 cl0 txt-center">
-            <?php echo $activeUser["f_name"] . " " . $activeUser['l_name'] ?>
-            <br>
-            <?php echo $activeUser["email"] ?>
-        </h2>
-        <?php if ($activeUser['role'] == 'admin') : ?>
-            <a href="./admin/index.php">
-                Go To Dashboard
-            </a>
-        <?php endif ?>
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92 bg2
+">
+        <div class="row container">
+            <div class="col-6">
+                <h2 class="pl-5 ml-5">Profile Page</h2>
+            </div>
+
+            <div class="col-3 text-center">
+                <h2>Name</h2>
+                <h4> <?php echo $activeUser["f_name"] . " " . $activeUser['l_name'] ?></h4>
+                <hr>
+                <h2>Email</h2>
+                <h4><?php echo $activeUser["email"] ?></h4>
+                <?php if ($activeUser['role'] == 'admin') : ?>
+                    <hr>
+                    <a href="./admin/index.php" style="color:#2a67b2; 
+">
+                        Go To Dashboard
+                    </a>
+                <?php endif ?>
+
+            </div>
+
+            <div class="col-2">
+            </div>
+        </div>
+        <!-- <h2 class="mtext-105 cl0 txt-center p-b-20" style="color: black;">
+         
+        </h2> -->
+
     </section>
     <!-- <section class="sec-product bg0 p-t-10 p-b-50">
         <div class="container">
@@ -88,7 +107,7 @@ require_once './functions.php';
                                     <td class="column-2"><?= $bill['date_ordered'] ?></td>
                                     <td class="column-3"><?= $bill['total_price'] ?> JOD </td>
                                     <td class="column-4 ">
-                                        <a href="./order-details.php?bill_id=<?= $bill['id'] ?>&bill_num=<?= $bill['bill_number'] ?>">
+                                        <a href="./order-details.php?bill_id=<?= $bill['id'] ?>&bill_num=<?= $bill['bill_number'] ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                             View
                                         </a>
                                     </td>
